@@ -28,6 +28,7 @@ namespace project2_errorhandlingAndObjects
             BankAccount bank = new BankAccount();
             bank.accountName = "Student saver";
             bank.setBalance(5);
+			System.Console.WriteLine(5.GetType()) //print out Int
             System.Console.WriteLine(bank.GetBalance());
             System.Console.ReadLine();
 
