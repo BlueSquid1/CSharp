@@ -21,20 +21,19 @@ class Money
 		}
 		
 		//or using automatic properties
-		//compilar creates a private variable that can't be references
-		public double PreviousPrice {get; set; } = 3.1; //assignment requires csc 6.0
+		//compilar creates a private variable that can't be references for this property but the property is made public (except for 'set')
+		public double PreviousPrice {get; private set; } = 3.1; //assignment requires csc 6.0
 		
-		public double ReadPrevious()
+		public void SetPreviousPrice(double amount)
 		{
-			return this.PreviousPrice;
+			this.PreviousPrice = amount;
 		}
 	}
 	
 	static void Main()
 	{
 		Stock x = new Stock();
-		//x.PreviousPrice =6.0;
-		
-		Console.WriteLine(x.ReadPrevious());
+		x.SetPreviousPrice(5.3);
+		Console.WriteLine(x.PreviousPrice);
 	}
 }
