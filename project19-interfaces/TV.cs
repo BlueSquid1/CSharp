@@ -16,7 +16,7 @@ class TV
 		void Reset();
 	}
 	
-	internal class Remote : TVRemote
+	protected class Remote : TVRemote
 	{
 		private string curChannel = "none";
 		
