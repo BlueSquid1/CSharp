@@ -34,6 +34,10 @@ class Zoo
 		int flightDis{get; set;}
 	}
 	
+	public interface ICarnivore : Animal
+	{
+		public abstract string favMeat{get; set;}
+	}
 	
 	
 	public class Eagle : Bird, IFlyingCreature
@@ -47,6 +51,8 @@ class Zoo
 			Console.WriteLine("Garr");
 		}
 	}
+	
+	//public class Bee : 
 	
 	public static void Main()
 	{
