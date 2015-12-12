@@ -3,7 +3,6 @@ using System;
 
 public interface StackI<T>
 {
-	void Push(T obj);
 	T Pop();
 }
 	
@@ -21,12 +20,22 @@ public class Stack<T> : StackI<T>
 			data[i] = default(T);
 		}
 	}
-		
+	
+	//---below is two ways of writing a push function---
+	/*	
 	public void Push(T obj)
 	{
 		data[pos] = obj;
 		pos++;
 	}
+	*/
+	
+	public void Push<U>(U obj) where U : T
+	{
+		data[pos] = obj;
+		pos++;
+	}
+	//===================================================
 	
 	public T Pop()
 	{
