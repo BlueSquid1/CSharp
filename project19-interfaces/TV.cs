@@ -1,6 +1,6 @@
 using System;
 
-class TV
+namespace core
 {
 	public interface antenna
 	{
@@ -16,7 +16,7 @@ class TV
 		void Reset();
 	}
 	
-	protected class Remote : TVRemote
+	public class Remote : TVRemote
 	{
 		private string curChannel = "none";
 		
@@ -35,15 +35,20 @@ class TV
 			this.curChannel = "none";
 		}
 	}
-	
+}
+
+class TV
+{	
 	public static void Main()
 	{
-		TVRemote myRemote;
+		//define an object with the interface of a remote
+		core.TVRemote myRemote;
 		
 		//simular to:
-		//Remote myRemote;
+		//core.Remote myRemote;
 		
-		myRemote = new Remote();
+		//fill in the implimentation with the class core.Remote
+		myRemote = new core.Remote();
 		myRemote.UpdateChannel("ch9");
 		Console.WriteLine(myRemote.GetChannel()); //ch9
 		myRemote.Reset();
